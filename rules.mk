@@ -1,3 +1,2 @@
-VIA_ENABLE = yes
+VIA_ENABLE = no
 DYNAMIC_KEYMAP_ENABLE = yes
-EEPROM_DRIVER = wear_leveling
