@@ -67,7 +67,7 @@
 
 // LED colors (RGB values)
 #define COLOR_OFF 0, 0, 0
-#define COLOR_WHITE U_PWM, U_PWM, U_PWM
+#define COLOR_WHITE 20, 20, 20
 #define COLOR_BLUE 0, 0, 60
 #define COLOR_GREEN 0, 60, 0
 #define COLOR_RED 60, 0, 0
