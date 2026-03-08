@@ -35,9 +35,7 @@ jobs:
       # 5. キーマップファイルのコピー
       - name: Copy keymap files
         run: |
-          mkdir -p /home/runner/qmk_firmware/keyboards/epomaker/luma40/keymaps/tk555
-          # リポジトリ内の全ファイル(keymap.cやrules.mkなど)をコピー
-          cp -r * /home/runner/qmk_firmware/keyboards/epomaker/luma40/keymaps/tk555/
+          cp -r keyboards/epomaker/luma40/keymaps/tk555 /home/runner/qmk_firmware/keyboards/epomaker/luma40/keymaps/
 
       # 6. Luma40のコンパイル実行
       - name: Compile firmware
