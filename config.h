@@ -26,4 +26,4 @@
 // 起動時のアニメーションを「単色点灯」に固定する
 // これにより、起動時のレインボー（爆光）を回避できます
 #undef RGB_MATRIX_DEFAULT_MODE
-#define RGB_MATRIX_DEFAULT_MODE SOLID_REACTIVE_SIMPLE
+#define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_REACTIVE_SIMPLE
