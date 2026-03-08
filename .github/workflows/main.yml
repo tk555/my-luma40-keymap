@@ -42,7 +42,7 @@ jobs:
       # 6. Luma40のコンパイル実行
       - name: Compile firmware
         # run: qmk compile -kb epomaker/luma40 -km tk555
-        run: qmk compile -kb epomaker/luma40
+        run: qmk compile -kb epomaker/luma40 -km default
 
       # 7. 生成されたファームウェアのアップロード
       - name: Upload Build Artifact
