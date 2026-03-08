@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_Q,    KC_W,    KC_E,      KC_R,     KC_T,       KC_TAB,       KC_Y,     KC_U,    KC_I,    KC_O,     KC_P,     KC_LBRC,
         KC_A,    KC_S,    KC_D,      KC_F,     KC_G,       KC_LALT,      KC_H,     KC_J,    KC_K,    KC_L,     KC_SCLN,  KC_QUOT,
         KC_Z,    KC_X,    KC_C,      KC_V,     KC_B,       KC_LGUI,      KC_N,     KC_M,    KC_COMM, KC_DOT,   KC_SLSH,  KC_BSLS,
-        MO(4),   KC_LCTL, KC_LSFT,   MO(1),    KC_SPC,                   KC_ENT,   MO(2),   KC_LCTL, KC_INS,   KC_PSCR,  KC_PAUS
+        MO(3),   KC_LCTL, KC_LSFT,   MO(1),    KC_SPC,                   KC_ENT,   MO(2),   KC_LCTL, KC_INS,   KC_PSCR,  KC_PAUS
     ),
     [1] = LAYOUT_tkl_ansi(
         LCTL(KC_Q), LCTL(KC_W), LCTL(KC_E),LCTL(KC_R),LCTL(KC_T), KC_INS,   KC_APP, KC_F7, KC_F8, KC_F9, KC_F10, KC_ESC,
@@ -45,16 +45,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, KC_TAB, _______, _______, _______, _______, _______, _______
     ),
     [3] = LAYOUT_tkl_ansi(
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,
-        _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
-    ),
-    [4] = LAYOUT_tkl_ansi(
         KC_TAB,  MD_BLE1, MD_BLE2,   MD_BLE3,  MD_24G,     RM_NEXT,   _______,  _______,   KC_LBRC, KC_RBRC,  KC_BSLS,  RM_TOGG,
         KC_ESC,  KC_1,    KC_2,      KC_3,     KC_4,       KC_5,      KC_6,     KC_7,    KC_8,    KC_9,     KC_0,     KC_MINS,
         KC_LSFT, KC_INS,  KC_DEL,    KC_HOME,  KC_END,     KC_PGUP,   KC_PGDN,  RM_SATD, RM_HUED, RM_HUEU,  RM_VALU , QK_BAT,
         KC_NO,   KC_DEL,  KC_GRV,    KC_LGUI,  KC_LALT,               EE_CLR,   RM_SATU, KC_EQL,  RM_SPDD,  RM_VALD,  RM_SPDU
     )
 };
+
+//同時押し
+layer_state_t layer_state_set_user(layer_state_t state) {
+  return update_tri_layer_state(state, 1, 2, 3);
+}
 // clang-format on
