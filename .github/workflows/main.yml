@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # # 1. 自分のキーマップリポジトリをチェックアウト
-      # - name: Checkout keymap repo
-      #   uses: actions/checkout@v4
+      # 1. 自分のキーマップリポジトリをチェックアウト
+      - name: Checkout keymap repo
+        uses: actions/checkout@v4
 
       # 2. QMK CLIのインストール（最新のpipxを使用）
       - name: Install QMK CLI
