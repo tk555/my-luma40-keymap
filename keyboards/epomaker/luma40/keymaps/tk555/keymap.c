@@ -52,8 +52,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
+extern bool Key_Fn_Status;
+
 //同時押し
 layer_state_t layer_state_set_user(layer_state_t state) {
-  return update_tri_layer_state(state, 1, 2, 3);
+    // 1. Layer 1 と 2 が両方 ON なら 3 を ON にする（既存の処理）
+    state = update_tri_layer_state(state, 1, 2, 3);
+
+    // 2. 「Fn状態」の定義を、物理キーではなく「レイヤー番号」に紐付ける
+    // レイヤー 2 または 3 がアクティブなとき、Fnインジケーターを有効にする
+    // これにより、Tri-layer でレイヤー3にいる間も正しく光ります
+    uint8_t current_layer = get_highest_layer(state);
+    if (current_layer == 3) {
+        Key_Fn_Status = true;
+    } else {
+        Key_Fn_Status = false;
+    }
+
+    return state;
 }
+
 // clang-format on
+//

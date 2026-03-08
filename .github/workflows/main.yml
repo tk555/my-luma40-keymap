@@ -32,10 +32,11 @@ jobs:
       - name: Install Toolchain
         run: sudo apt-get update && sudo apt-get install -y gcc-arm-none-eabi gcc-avr avr-libc
 
-      # 5. キーマップファイルのコピー
+      # 5. ファイルのコピー
       - name: Copy keymap files
         run: |
           cp -r keyboards/epomaker/luma40/keymaps/tk555 /home/runner/qmk_firmware/keyboards/epomaker/luma40/keymaps/
+          cp lib/rdmctmzt_common/* /home/runner/qmk_firmware/lib/rdmctmzt_common/
 
       # 6. Luma40のコンパイル実行
       - name: Compile firmware
