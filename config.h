@@ -17,3 +17,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 // Custom configuration
+//
+#pragma once
+
+// 明るさの最大値を下げる（0〜255。デフォルトは255で眩しすぎることが多いです）
+#undef RGBLIGHT_DEFAULT_VAL
+#define RGBLIGHT_DEFAULT_VAL 50
+
+// 起動時のデフォルトモードを単色点灯にする
+#undef RGBLIGHT_DEFAULT_MODE
+#define RGBLIGHT_DEFAULT_MODE RGB_MATRIX_SOLID_REACTIVE_SIMPLE
